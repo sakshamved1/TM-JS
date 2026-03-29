@@ -56,5 +56,23 @@
     - Math Objects
 
 # 3
+
     - Date & Time
-    - 
+
+    ////////////////////////////////////2
+    - Array basics
+        - Ways to create array & Access indexing
+    - Array methods
+        -push
+        -pop
+        - unshift   (add element to first index)
+        - shift   (remove element to first index)
+        - reverse
+        - include
+        - slice (returns an new array)
+        - splice (Will change the original array);
+
+        - nesting array inside array
+        - spread operator
+
+        - Array object static methods
