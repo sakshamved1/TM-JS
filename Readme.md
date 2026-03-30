@@ -80,3 +80,6 @@
     - Array object static methods
     - How to access objects & manipulate them
     - Objects methods
+
+    - Object destructuring and naming
+    - Json intro
