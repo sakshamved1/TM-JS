@@ -75,4 +75,8 @@
         - nesting array inside array
         - spread operator
 
-        - Array object static methods
+# 4
+
+    - Array object static methods
+    - How to access objects & manipulate them
+    - Objects methods
