@@ -83,3 +83,26 @@
 
     - Object destructuring and naming
     - Json intro
+
+# 5
+
+    ////////////////3
+
+    - function basics
+    - default parameter
+    - window object
+    - function Shadowing
+    - iife
+
+# 6
+
+    ///////////////4
+    - Execution context
+    - Phases
+        - Memory creation
+            - Variable and fucntion are store in heap memory
+            - GEC variables and functions are set to "undefined"
+        - code exeution
+            - execute code line by line
+            - Create new execution context for each function calls
+        - Call Stack
