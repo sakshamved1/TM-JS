@@ -111,4 +111,11 @@
 
     - if  else
     - else if nesting
+    - switch
+    - truthy falsy
+    - logical operator
+    
+# 7 
+    ////////////////5 Loops and higher order Arrays methods
+
     - 
