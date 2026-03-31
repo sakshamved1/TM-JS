@@ -96,7 +96,6 @@
 
 # 6
 
-    ///////////////4
     - Execution context
     - Phases
         - Memory creation
@@ -106,3 +105,10 @@
             - execute code line by line
             - Create new execution context for each function calls
         - Call Stack
+
+
+    ///////////////4 Logic control flow
+
+    - if  else
+    - else if nesting
+    - 
