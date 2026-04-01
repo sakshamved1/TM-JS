@@ -118,4 +118,5 @@
 # 7 
     ////////////////5 Loops and higher order Arrays methods
 
-    - 
+    - loops
+    - Array methods 
