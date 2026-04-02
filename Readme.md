@@ -114,9 +114,24 @@
     - switch
     - truthy falsy
     - logical operator
-    
-# 7 
+
+# 7
+
     ////////////////5 Loops and higher order Arrays methods
 
     - loops
-    - Array methods 
+        - forof --> used for Arrays
+        - foreach --> used for Objects
+    - Array methods
+
+# 8
+
+    ////////////////6
+
+    - DOM intro
+    - Examining objects
+    - dom selectors
+        -single
+        -multiple elements
+    - Traversing the DOM
+        - 
