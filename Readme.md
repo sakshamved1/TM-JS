@@ -134,4 +134,16 @@
         -single
         -multiple elements
     - Traversing the DOM
-        - 
+
+# 9
+
+    ///////////////////7
+
+    - Create elements
+        - createElement();
+        - appendChild();
+
+    - Traversing the DOM elements
+    - Traversing own Nodes
+    - Createing elements
+    * List items challenge
