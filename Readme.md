@@ -155,4 +155,15 @@
     Select --> Create --> Replaces
 
     13. 
+        Remove Elements using .remove() , removechild
+
+    
+    14.
+        - Adding and removing style classes
+
+        - classList & its properties like .add, .remove, .toggle, .replace 
+
+        - style properties like lineHeight
+
+        
 
