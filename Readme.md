@@ -165,5 +165,15 @@
 
         - style properties like lineHeight
 
-        
+
+# 10
+    1. 
+        - Inline Event handler
+        - .onclick --> Can used single event listner
+
+        - .addEventlistner() can run multiple event listner 
+
+        - .removeEventListner() to remove events
+
+        - alert();
 
