@@ -180,5 +180,12 @@
     2.
         - Events like
             click, dblclick, contextmenu, mousedown, mouseup , wheel, mouseover, mouseout, dragstart, dragend
-        
+
+    3. 
+        - Events like
+            preventDeafult , target, currentTarget , type , timeStamp , clientX ,  clientY , pageX, pageY, 
+            screenX, screenY
+
+    4. 
+        - 
 
