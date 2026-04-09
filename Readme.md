@@ -187,5 +187,6 @@
             screenX, screenY
 
     4. 
-        - 
+        - e.key, 
+        - e.keyCode , e.code , e.repeat , 
 
