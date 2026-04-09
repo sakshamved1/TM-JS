@@ -176,4 +176,9 @@
         - .removeEventListner() to remove events
 
         - alert();
+    
+    2.
+        - Events like
+            click, dblclick, contextmenu, mousedown, mouseup , wheel, mouseover, mouseout, dragstart, dragend
+        
 
