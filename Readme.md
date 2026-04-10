@@ -191,12 +191,14 @@
         - e.keyCode , e.code , e.repeat 
 
 
-    6. 
+# 11 Hour
+
+    1. 
         - e.target.value     --> Grab the value
         - change --> Trigger the changes on state
         - e.target.checked   -> check if textbox is checked
         - focus
         - blurr
 
-    7. 
-        -
+    2. 
+        - 
