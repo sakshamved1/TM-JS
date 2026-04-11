@@ -201,4 +201,10 @@
         - blurr
 
     2. 
+        - Accessing form & targeting its fields
+        - formData & its methods
+
+    3. 
+        - if we fireup click event then any parent have click event gets fired up  tooo
+        - e.stopPropagation();
         - 
