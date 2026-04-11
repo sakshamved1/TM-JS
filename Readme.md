@@ -208,3 +208,12 @@
         - if we fireup click event then any parent have click event gets fired up  tooo
         - e.stopPropagation();
         - 
+    
+    4. 
+        - 👉 Event delegation = attaching ONE event listener to a parent to handle events for its children
+        -
+        - using events to add styles & remove elements
+
+
+    5. 
+        - 
