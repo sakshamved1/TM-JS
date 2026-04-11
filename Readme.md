@@ -216,4 +216,10 @@
 
 
     5. 
-        - 
+        - window.onLoad
+        - Events like
+            load  --> Wait for entire things is loaded like images fonts, html
+
+            DOMcontentLoaded ---> HTML is loaded and parsed
+
+        - Things to make Page more cool and dynamics
