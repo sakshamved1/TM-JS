@@ -64,3 +64,10 @@ input {
 .list-group-item:last-child {
     margin-bottom: 10px;
 }
+
+.end-btn{
+    padding: 10px 100px;
+    margin: 10px;
+    width: 100%;
+    background-color: grey;
+}

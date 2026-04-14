@@ -18,7 +18,7 @@
 
 
 
-// Selectors
+// ===============================Selectors============================
 
 // var headerTitle = document.getElementById('header-title');
 
@@ -53,7 +53,7 @@
 
 // console.log(li);
 // // console.log(li[0]);
-                                                                                                                      
+
 // for (let i = 0; i < li.length; i++) {
 //     li[i].style.backgroundColor = 'grey';
 //     li[i].style.color = 'white';
@@ -95,7 +95,7 @@
 
 //========================= TRAVERSING THE DOM==============================
 
-var itemList = document.querySelector('#items')
+// var itemList = document.querySelector('#items')
 // parentnode
 // console.log(itemList.parentNode);
 // itemList.parentNode.style.backgroundColor = 'grey';
@@ -138,33 +138,110 @@ var itemList = document.querySelector('#items')
 // ========================INSERTION IN DOM=======================
 
 // createElement
-var newDiv = document.createElement('div');
-// Add class
-newDiv.className = 'hello1';
+// var newDiv = document.createElement('div');
+// // Add class
+// newDiv.className = 'hello1';
 
-// Add id
-newDiv.id = 'hello2'
+// // Add id
+// newDiv.id = 'hello2'
 
-// Add title
-newDiv.setAttribute('title', 'prabhu');
+// // Add title
+// newDiv.setAttribute('title', 'prabhu');
 
-// create text Node
-var newDivText = document.createTextNode('hello world');
+// // create text Node
+// var newDivText = document.createTextNode('hello world');
 
-// Add text to div
-newDiv.appendChild(newDivText);
+// // Add text to div
+// newDiv.appendChild(newDivText);
 
-console.log(newDiv);
+// console.log(newDiv);
 
 
-var container = document.querySelector('header .container');
-var h1 = document.querySelector('header h1');
+// var container = document.querySelector('header .container');
+// var h1 = document.querySelector('header h1');
 
-console.log(container);
+// console.log(container);
 
-// Add element just before the Selected Node
-container.insertBefore(newDiv, h1);
-newDiv.style.fontSize = '30px';
+// // Add element just before the Selected Node
+// container.insertBefore(newDiv, h1);
+// newDiv.style.fontSize = '30px';
+
+
+// =======================EVENT LISTNERS========================
+
+// var button = document.getElementById('btn').addEventListener('click', buttonClick);
+
+// function buttonClick(e) {
+//     // document.getElementById('header-title').textContent = 'changed';
+//     // document.getElementById('btn').style.backgroundColor = 'white';
+//     // document.getElementById('btn').style.color = 'black';
+
+//     console.log(e.target);
+//     console.log(e.target.className);
+//     console.log(e.target.classList);
+
+
+//     // console.log(e.type);
+
+//     // console.log(e.clientX);
+//     // console.log(e.clientY);
+
+//     console.log(e.offsetX);
+//     console.log(e.offsetY);
+
+//     console.log(e.altKey);
+//     console.log(e.ctlKey);
+//     console.log(e.shiftKey);   
+// }
+
+
+// var button = document.getElementById('button');
+// var box = document.getElementById('box');
+
+
+// var button = document.getElementById('btn').addEventListener('click', runEvent);
+// var button = document.getElementById('btn').addEventListener('dblclick', runEvent);
+// var button = document.getElementById('btn').addEventListener('mousedown', runEvent);
+// var button = document.getElementById('btn').addEventListener('mouseup', runEvent);
+// var button = document.getElementById('btn').addEventListener('mouseover', runEvent);
+
+// box.addEventListener('mouseenter', runEvent);
+// box.addEventListener('mouseleave', runEvent);
+// box.addEventListener('mouseover', runEvent);
+// box.addEventListener('mouseout', runEvent);
+
+
+// var itemInput = document.querySelector('input[type="text"]');
+var form  = document.querySelector('form');
+
+form.addEventListener('submit', runEvent);
+
+
+// itemInput.addEventListener('keyup', runEvent);
+// itemInput.addEventListener('keydown', runEvent);
+// itemInput.addEventListener('keypress', runEvent);
+
+
+// itemInput.addEventListener('focus', runEvent);
+// itemInput.addEventListener('blur', runEvent);
+
+// itemInput.addEventListener('cut', runEvent);
+// itemInput.addEventListener('copy', runEvent);
+// itemInput.addEventListener('paste', runEvent);
+// itemInput.addEventListener('input', runEvent);
+
+
+
+function runEvent(e) {
+    console.log(e.type);   
+}
+
+
+
+
+
+
+
 
 
 
