@@ -22,6 +22,7 @@ function filterItem(e) {
 
         if (itemName.toLowerCase().indexOf(text) != -1) {
             item.style.display = 'block';
+
         }
         else {
             item.style.display = 'none';
