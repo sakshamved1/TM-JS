@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Contacts</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" integrity="sha512-UJfAaOlIRtdR+0P6C3KUoTDAxVTuy3lnSXLyLKlHYJlcSU8Juge/mjeaxDNMlw9LgeIotgz5FP8eUQPhX1q10A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="center-align">My Contacts</h1>
+
+        <input type="text" id="filterInput" placeholder="Enter the name to Search">
+
+        <ul class="collection with-header" id="names">
+            <li class="collection-header">A</li>
+            <li class="collection-item"><a href="#" target="_blank" rel="noopener noreferrer">Abhi</a></li>
+            <li class="collection-item"><a href="#" target="_blank" rel="noopener noreferrer">Akky</a></li>
+            <li class="collection-item"><a href="#" target="_blank" rel="noopener noreferrer">Aish</a></li>
+
+            <li class="collection-header">B</li>
+            <li class="collection-item"><a href="#" target="_blank" rel="noopener noreferrer">berlin</a></li>
+            <li class="collection-item"><a href="#" target="_blank" rel="noopener noreferrer">bessy</a></li>
+            <li class="collection-item"><a href="#" target="_blank" rel="noopener noreferrer">bathy</a></li>
+
+            <li class="collection-header">C</li>
+            <li class="collection-item"><a href="#" target="_blank" rel="noopener noreferrer">Cathy</a></li>
+            <li class="collection-item"><a href="#" target="_blank" rel="noopener noreferrer">caroline</a></li>
+            <li class="collection-item"><a href="#" target="_blank" rel="noopener noreferrer">celine</a></li>
+
+            <li class="collection-header">D</li>
+            <li class="collection-item"><a href="#" target="_blank" rel="noopener noreferrer">Daisy</a></li>
+            <li class="collection-item"><a href="#" target="_blank" rel="noopener noreferrer">Dizzy</a></li>
+            <li class="collection-item"><a href="#" target="_blank" rel="noopener noreferrer">dimmy</a></li>
+        </ul>
+    </div>
+
+    <script>
+        const filterInput = document.getElementById('filterInput');
+
+        filterInput.addEventListener('keyup', filterNames);
+
+        function filterNames() {
+            const filteredValue = filterInput.value.toUpperCase();
+
+            // console.log(filteredValue);
+
+            const ul = document.getElementById('names');
+            const li = document.querySelectorAll('li.collection-item');
+
+
+            
+
+            for (let i = 0; i < li.length; i++) {
+                
+                let a = li[i].getElementsByTagName('a')[0];
+
+                // console.log(a);
+                if (a.innerHTML.toUpperCase().indexOf(filteredValue) > -1) {
+                    li[i].style.display = '';
+                }
+                else{
+                    li[i].style.display = 'none';
+                }  
+            }     
+        }
+    </script>
+    
+</body>
+</html>

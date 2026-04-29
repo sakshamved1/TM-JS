@@ -1,5 +1,5 @@
-// Class Book : Referencing Book
-class Book {
+// Books class : reference of books
+class Books {
     constructor(title, author, isbn) {
         this.title = title;
         this.author = author;
@@ -7,13 +7,21 @@ class Book {
     }
 }
 
+// UI class : Contains Ui functions
 class UI {
+    static displayBooks() {
 
-    // method for displaying the book
-    static displayBook(book) {                                                                             
-        const books = store.getBooks();
+        // const storedBooks = [
+        //     { title: 'The Great Gatsby', author: 'F. Scott Fitzgerald', isbn: '978-0-7432-7356-5' },
+        //     { title: '1984', author: 'George Orwell', isbn: '978-0-452-28423-4' },
+        //     { title: 'To Kill a Mockingbird', author: 'Harper Lee', isbn: '978-0-06-112008-4' }
+        // ]
 
-        books.forEach((book) => UI.addBookToList(book));
+        const storedBooks = Store.getBook();
+
+        storedBooks.forEach(b => UI.addBookToList(b));
+
+
     }
 
     static addBookToList(book) {
@@ -23,58 +31,70 @@ class UI {
         const row = document.createElement('tr');
 
         row.innerHTML = `
-            
-                <td>${book.title}</td>
-                <td>${book.author}</td>
-                <td>${book.isbn}</td>
-                <td><a href = '#' class = 'btn btn-danger delete'>X</a></td>
+            <td>${book.title}</td>
+            <td>${book.author}</td>
+            <td>${book.isbn}</td>
+            <td><a href = '#' class = 'btn btn-danger delete'>X</a></td>
         `
 
         bookList.appendChild(row);
+
+
+
+
     }
 
+    static removeBook(el) {
 
-    static clearFields() {
-        const title = document.getElementById('title').value = '';
-        const author = document.getElementById('author').value = '';
-        const isbn = document.getElementById('isbn').value = '';
-    }
-
-    static removeBook(book) {
-
-        if (book.classList.contains('delete')) {
-            book.parentElement.parentElement.remove();
-
+        // Check  If user clicking on Rmeove btn.
+        if (el.classList.contains('delete')) {
+            el.parentElement.parentElement.remove();
         }
     }
 
-    static showAlert(message, className) {
+    static clearfields() {
+        const title = document.getElementById('title').value = '';
+        const author = document.getElementById('author').value = '';
+        const isbn = document.getElementById('isbn').value = '';
+
+    }
+
+    static showAlerts(message, className) {
 
         const div = document.createElement('div');
+
+
         div.className = className;
 
-        div.appendChild(document.createTextNode(message));
+        div.textContent = message;
 
         const container = document.querySelector('.container');
         const form = document.querySelector('#book-form');
 
         container.insertBefore(div, form);
 
-
         setTimeout(() => {
-            document.querySelector('.alert').remove();
+            div.remove();
         }, 3000);
+
+
+
+
+
+
+
+
 
     }
 
 
 
-
 }
 
-// Store class : Handles storage
-class store {
-    static getBooks() {
+// // Storage class : Local Storage
+class Store {
+
+    static getBook() {
         let books;
         if (localStorage.getItem('books') === null) {
             books = [];
@@ -82,80 +102,82 @@ class store {
         else {
             books = JSON.parse(localStorage.getItem('books'));
         }
-
         return books;
     }
 
+
+
     static addBook(book) {
-        const books = store.getBooks();
+        const books = Store.getBook();
+
         books.push(book);
 
         localStorage.setItem('books', JSON.stringify(books));
-    }
-    static removeBook(isbn) {
 
-        const books = store.getBooks();
+
+    }
+
+    static removeBook(isbn) {
+        const books = Store.getBook();
 
         books.forEach((book, index) => {
             if (book.isbn === isbn) {
                 books.splice(index, 1);
             }
-        })
+        });
 
         localStorage.setItem('books', JSON.stringify(books));
     }
+
 }
 
 
-// Display Books
-document.addEventListener('DOMContentLoaded', (e) => UI.displayBook());
+// Event Listners
+document.addEventListener('DOMContentLoaded', () => UI.displayBooks());
 
-
+// Book add
 document.getElementById('book-form').addEventListener('submit', (e) => {
 
     e.preventDefault();
-
-    // Fetched values
     const title = document.getElementById('title').value;
     const author = document.getElementById('author').value;
     const isbn = document.getElementById('isbn').value;
 
-    // Validation
+
     if (title === '' || author === '' || isbn === '') {
-        // alert('Please fill all the fields');
-        UI.showAlert('Please fill the fields', 'alert alert-danger');
+        UI.showAlerts('Fill all fields', 'alert alert-danger');
         return;
-    };
+    }
 
-    // instantiate new Book object
-    const book = new Book(title, author, isbn);
+    // Create a instance of Book class
+    const book = new Books(title, author, isbn);
 
 
-    console.log(book);
-
-    // added book to UI
+    // pass the Book instance to add function
     UI.addBookToList(book);
 
-    // Add book to localStorage
-    store.addBook(book);
+    // Add book to local storage
+    Store.addBook(book);
 
-    // show Success message
-    UI.showAlert('Book added', 'alert alert-success');
+    // Show alert if book added/
+    UI.showAlerts('Book added successfully', 'alert alert-success');
 
-    UI.clearFields();
+    // Clear fields
+    UI.clearfields();
+
 })
 
+// Book remove
 document.getElementById('book-list').addEventListener('click', (e) => {
-    // Remove book from UI
     UI.removeBook(e.target);
 
-    // remove book from Store
-    // console.log(store.removeBook(e.target.parentElement.previousElementSibiling.textContent));
-    // store.removeBook(e.target.parentElement.previousElementSibling.textContent);
-    store.removeBook(e.target.parentElement.previousElementSibling.textContent);
+    // Store.removeBook(e.target.parentElement.paren);
+
+    // console.log(e.target.parentElement.previousSibling.textContent);
+    Store.removeBook(e.target.parentElement.previousElementSibling.textContent);
+
+
+
+
     
-
-
-    UI.showAlert('Book removed', 'alert-success');
-
 })
